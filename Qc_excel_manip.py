@@ -6,8 +6,7 @@ import Qc_data_manip
 #_______________________________________________________________________________
 
 class BaseExcellTemplate():
-    def __init__(self, master, categories, sub_categories, currency_conversions):
-        self.master=[]
+    def __init__(self, categories, sub_categories, currency_conversions):
         self.currency_conversions={}
         pass
 
