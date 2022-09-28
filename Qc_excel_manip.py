@@ -1,4 +1,4 @@
-import openpyxl
+import openpyxl as xl
 import openpyxl_templates
 import Qc_data_manip
 
