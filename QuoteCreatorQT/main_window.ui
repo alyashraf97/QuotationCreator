@@ -21,17 +21,208 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <widget class="QGroupBox" name="quotation_groupBox">
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="vendors_and_items_groupBox">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="11" column="4" colspan="17">
-        <widget class="QTableWidget" name="tableWidget">
+       <item row="9" column="1">
+        <widget class="QLabel" name="items_label">
+         <property name="text">
+          <string>Items</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" rowspan="2" colspan="13">
+        <widget class="QGroupBox" name="vendor_entry_form_groupBox">
+         <property name="title">
+          <string>       Vendor Details</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="1" colspan="5">
+           <widget class="QLineEdit" name="vendor_name_field"/>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="packing_cost_field"/>
+          </item>
+          <item row="1" column="11">
+           <widget class="QLabel" name="target_profit_percent_label_2">
+            <property name="text">
+             <string>%</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="11">
+           <widget class="QLabel" name="vendor_comission_percent">
+            <property name="text">
+             <string>%</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QLabel" name="vendor_customs_label">
+            <property name="text">
+             <string>Customs</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="vendor_shippingcost_label">
+            <property name="text">
+             <string>Shipping Cost</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="vendor_leadtime_label">
+            <property name="text">
+             <string>Vendor Lead Time (Weeks):</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="6">
+           <widget class="QLabel" name="target_profit_label_2">
+            <property name="text">
+             <string>Vendor Commission:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="9" colspan="2">
+           <widget class="QToolButton" name="vendor_add_button">
+            <property name="text">
+             <string>Add Vendor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="4">
+           <widget class="QLabel" name="vendor_currency_label">
+            <property name="text">
+             <string>Vendor Currency:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <widget class="QComboBox" name="vendor_currency_combo">
+            <item>
+             <property name="text">
+              <string>EUR</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>USD</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>GBP</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>EGP</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>CHF</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>AED</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="9">
+           <widget class="QLineEdit" name="customs_percent_field"/>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="vendor_name_label">
+            <property name="text">
+             <string>Vendor Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="9">
+           <widget class="QLineEdit" name="vendor_comission_field">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLineEdit" name="shipping_cost_field">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="vendor_packingcost_label">
+            <property name="text">
+             <string>Packing &amp; Legalization Cost:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="vendor_lead_time_field"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="7" column="0" rowspan="4">
+        <widget class="QGroupBox" name="vendors_groupbox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string/>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="vendors_label">
+            <property name="text">
+             <string>Vendors</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="edit_selected_vendor_button">
+            <property name="text">
+             <string>edit</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QToolButton" name="remove_selected_vendor_button">
+            <property name="text">
+             <string>remove</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QListWidget" name="vendor_list">
+            <item>
+             <property name="text">
+              <string>Rohde &amp; Schwarz</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="10" column="1" colspan="14">
+        <widget class="QTableWidget" name="items_table">
          <property name="sortingEnabled">
           <bool>false</bool>
          </property>
@@ -85,34 +276,148 @@
          </column>
         </widget>
        </item>
-       <item row="4" column="14">
-        <widget class="QLineEdit" name="offer_validity_field"/>
-       </item>
-       <item row="4" column="8">
-        <widget class="QLabel" name="quote_currency_label">
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="quotation_form_groupBox">
+      <property name="title">
+       <string>Quotation Details</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="3" column="1">
+        <widget class="QLabel" name="request_label">
          <property name="text">
-          <string>Quote Currency</string>
+          <string>Request</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="8">
+       <item row="1" column="1">
+        <widget class="QLabel" name="customer_label">
+         <property name="text">
+          <string>Customer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3" colspan="2">
+        <widget class="QLineEdit" name="customer_field">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="14">
+        <widget class="QPushButton" name="export_to_excel_button">
+         <property name="text">
+          <string>Export to Excel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="11">
+        <widget class="QLabel" name="offer_validity_label">
+         <property name="text">
+          <string>Offer Vailidity (Months)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="10">
+        <widget class="QComboBox" name="vat_state_combo">
+         <item>
+          <property name="text">
+           <string>Included</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Not Included</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="11">
+        <widget class="QLabel" name="delivery_type_label">
+         <property name="text">
+          <string>Delivery Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="11">
+        <widget class="QLabel" name="target_profit_label">
+         <property name="text">
+          <string>Target PO Profit</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3" colspan="2">
+        <widget class="QLineEdit" name="request_field">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="9">
+        <widget class="QLabel" name="vat_label">
+         <property name="text">
+          <string>VAT</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="14">
+        <widget class="QPushButton" name="save_to_file_button">
+         <property name="text">
+          <string>Save to File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="14">
+        <widget class="QPushButton" name="export_to_pdf_button">
+         <property name="text">
+          <string>Export to PDF</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="12">
+        <widget class="QLineEdit" name="delivery_type_field"/>
+       </item>
+       <item row="2" column="12">
+        <widget class="QLineEdit" name="offer_validity_field"/>
+       </item>
+       <item row="2" column="1">
         <widget class="QLabel" name="manufacturer_label">
          <property name="text">
           <string>Manufacturer(s)</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="1" colspan="7">
-        <widget class="QLineEdit" name="customer_field"/>
+       <item row="1" column="12">
+        <widget class="QLineEdit" name="target_profit_field"/>
        </item>
-       <item row="5" column="8">
-        <widget class="QLabel" name="quotation_date_label">
+       <item row="1" column="13">
+        <widget class="QLabel" name="target_profit_percent_label">
          <property name="text">
-          <string>Date</string>
+          <string>%</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="9">
+       <item row="2" column="10">
         <widget class="QComboBox" name="quote_currency_combo">
          <item>
           <property name="text">
@@ -146,342 +451,119 @@
          </item>
         </widget>
        </item>
-       <item row="7" column="2">
-        <widget class="QToolButton" name="vendor_add_button">
+       <item row="2" column="3" colspan="2">
+        <widget class="QLineEdit" name="manufacturer_field">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>0</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="9">
+        <widget class="QLabel" name="quote_currency_label">
          <property name="text">
-          <string>+</string>
+          <string>Quote Currency</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="14">
-        <widget class="QComboBox" name="delivery_type_combo">
-         <item>
-          <property name="text">
-           <string>CIF</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Site Delivery</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Other</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="0" column="16">
-        <widget class="QPushButton" name="export_to_pdf_button">
-         <property name="text">
-          <string>Export to PDF</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="16">
-        <widget class="QPushButton" name="export_to_excel_button">
-         <property name="text">
-          <string>Export to Excel</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="14">
-        <widget class="QLineEdit" name="target_profit_field"/>
-       </item>
-       <item row="4" column="13">
-        <widget class="QLabel" name="offer_validity_label">
-         <property name="text">
-          <string>Offer Vailidity (Months)</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0" rowspan="4" colspan="4">
-        <widget class="QListWidget" name="listWidget"/>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="quote_ref_label">
-         <property name="text">
-          <string>Ref. No.</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1" colspan="4">
-        <widget class="QLineEdit" name="quote_ref_field"/>
-       </item>
-       <item row="2" column="16">
-        <widget class="QPushButton" name="save_to_file_button">
-         <property name="text">
-          <string>Save to File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="13">
-        <widget class="QLabel" name="target_profit_label">
-         <property name="text">
-          <string>Target PO Profit</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="15">
-        <widget class="QLabel" name="target_profit_percent_label">
-         <property name="text">
-          <string>%</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="4">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Items</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="4" rowspan="3" colspan="15">
-        <widget class="QGroupBox" name="groupBox_2">
-         <property name="title">
-          <string>GroupBox</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_3">
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="packing_cost_field"/>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="vendor_leadtime_label">
-            <property name="text">
-             <string>Vendor Lead Time (Weeks):</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="vendor_name_label">
-            <property name="text">
-             <string>Vendor Name:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="vendor_packingcost_label">
-            <property name="text">
-             <string>Packing &amp; Legalization Cost:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QLineEdit" name="vendor_lead_time_field"/>
-          </item>
-          <item row="0" column="9">
-           <widget class="QLineEdit" name="vendor_comission_field">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="6">
-           <widget class="QLabel" name="target_profit_label_2">
-            <property name="text">
-             <string>Vendor Commission:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="11">
-           <widget class="QLabel" name="target_profit_percent_label_2">
-            <property name="text">
-             <string>%</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="9">
-           <widget class="QLineEdit" name="custome_percent_field"/>
-          </item>
-          <item row="1" column="6">
-           <widget class="QLabel" name="vendor_customs_label">
-            <property name="text">
-             <string>Customs</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" colspan="5">
-           <widget class="QLineEdit" name="vendor_name_field"/>
-          </item>
-          <item row="1" column="4">
-           <widget class="QLabel" name="vendor_shippingcost_label">
-            <property name="text">
-             <string>Shipping Cost</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="5">
-           <widget class="QLineEdit" name="shipping_cost_field">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="4">
-           <widget class="QLabel" name="vendor_currency_label">
-            <property name="text">
-             <string>Vendor Currency:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="5">
-           <widget class="QComboBox" name="vendor_currency_combo">
-            <item>
-             <property name="text">
-              <string>EUR</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>USD</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>GBP</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>EGP</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>CHF</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>AED</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="request_label">
-         <property name="text">
-          <string>Request</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Vendors</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="10">
-        <widget class="QLabel" name="vat_label">
-         <property name="text">
-          <string>VAT</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="11">
-        <widget class="QPushButton" name="set_date_to_today_button">
-         <property name="text">
-          <string>Today</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="8">
+       <item row="4" column="1">
         <widget class="QLabel" name="payment_term_label">
          <property name="text">
           <string>Payment Term</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="13">
-        <widget class="QLabel" name="delivery_type_label">
+       <item row="5" column="1">
+        <widget class="QLabel" name="quote_ref_label">
          <property name="text">
-          <string>Delivery Type</string>
+          <string>Ref. No.</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="5">
+       <item row="5" column="3">
+        <widget class="QLineEdit" name="payment_term_field"/>
+       </item>
+       <item row="5" column="4">
         <widget class="QPushButton" name="ref_number_generator_button">
          <property name="text">
           <string>Generate</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1" colspan="7">
-        <widget class="QLineEdit" name="request_field"/>
+       <item row="4" column="3" colspan="2">
+        <widget class="QLineEdit" name="quote_ref_field"/>
        </item>
-       <item row="5" column="9" colspan="2">
+       <item row="1" column="9">
+        <widget class="QLabel" name="quotation_date_label">
+         <property name="text">
+          <string>Date</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="10">
         <widget class="QDateEdit" name="quotation_date_entry"/>
        </item>
-       <item row="7" column="3">
-        <widget class="QToolButton" name="vendor_remove_button">
-         <property name="text">
-          <string>-</string>
+       <item row="4" column="9" rowspan="2" colspan="6">
+        <widget class="QFrame" name="current_totals_frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
          </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
+           <widget class="QLabel" name="current_quote_total_label">
+            <property name="text">
+             <string>Current Quote Total</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="current_quote_total_number_label">
+            <property name="text">
+             <string>Total</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="current_quote_total_currency_label">
+            <property name="text">
+             <string>Currency</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="total_markup_label">
+            <property name="text">
+             <string>Total Markup</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="total_markup_number_label">
+            <property name="text">
+             <string>Markup</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="total_markup_percent_label">
+            <property name="text">
+             <string>%</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="customer_label">
-         <property name="text">
-          <string>Customer</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="9" colspan="4">
-        <widget class="QLineEdit" name="manufacturer_label_2"/>
-       </item>
-       <item row="2" column="9" colspan="4">
-        <widget class="QLineEdit" name="payment_term_field"/>
-       </item>
-       <item row="4" column="11" colspan="2">
-        <widget class="QComboBox" name="vat_state_combo">
-         <item>
-          <property name="text">
-           <string>Included</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Not Included</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="5" column="12">
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::MinimumExpanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="4" column="6">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>30</width>
-           <height>10</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
