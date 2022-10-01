@@ -23,8 +23,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         offerValidity=int(self.offer_validity_field.text())
         deliveryType=self.delivery_type_field.text()
         
-        
-        
         quoteData = {
             "customer":customer,
             "manufacturers":manufacturers,
