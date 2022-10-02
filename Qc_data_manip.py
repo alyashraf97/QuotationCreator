@@ -75,8 +75,6 @@ class Quote():
 
 
 
-<<<<<<< Updated upstream
-=======
 
 
 
@@ -237,7 +235,6 @@ class QuotationMath():
 
 
 
->>>>>>> Stashed changes
 #_______________________________________________________________________________
 #----------------Class for the vendors------------------------------------------
 #_______________________________________________________________________________
@@ -253,3 +250,4 @@ class VendorItem(Vendor):
                  item_type, item_description, item_quantity, item_part_number):
         super().__init__(vendor_currency, shipping_cost, packaging_cost, 
                          clearing_cost, vendor_comission, vendor_leadtime)
+                         '''
