@@ -1,3 +1,5 @@
+
+'''
 import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip
 from email.quoprimime import quote
 import typing
@@ -111,9 +113,9 @@ class Quote:
             self.deliveryType = qouteData["deliveryType"]
         
 
-    '''def __init__(self,listing_of_all_vendors):
-        self.listing_of_all_vendors=listing_of_all_vendors
-        self.final_prices=self.calculate_final_price'''
+        def __init__(self,listing_of_all_vendors):
+            self.listing_of_all_vendors=listing_of_all_vendors
+            self.final_prices=self.calculate_final_price
 
         
     def seperate_vendor(self,vendor_name):
@@ -183,3 +185,5 @@ app = QtWidgets.QApplication(sys.argv)
 window = MainWindow()
 window.show()
 app.exec()
+
+'''
