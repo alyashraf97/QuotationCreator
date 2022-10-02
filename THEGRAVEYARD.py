@@ -1,30 +1,20 @@
-<<<<<<< Updated upstream
-import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip, Qc_gui
-=======
-from email.quoprimime import quote
-import typing
-import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip
->>>>>>> Stashed changes
-import sys
-from PyQt6 import QtWidgets, uic
 
-from QuoteCreatorQT.ui_main_window import Ui_MainWindow
 
-class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
-<<<<<<< Updated upstream
-    def __init__(self, *args, obj=None, **kwargs):
-        super(MainWindow, self).__init__(*args, **kwargs)
-        self.setupUi(self)
-=======
-    vendors =[]
+
+
+
+
+#INTO THE BOWELS OF HELL
+
+'''
+
+vendors =[]
     allQuoteData={}
-    def __init__(self, *args, obj=None, **kwargs):
-        super(MainWindow, self).__init__(*args, **kwargs)
-        self.setupUi(self)
-    #self.vendors=[]
-    
-    
-    def get_quote_data(self):
+
+
+
+
+def get_quote_data(self):
         customer=self.customer_field.text()
         manufacturers=self.manufacturer_field.text()
         request=self.request_field.text()
@@ -115,9 +105,9 @@ class Quote:
             self.deliveryType = qouteData["deliveryType"]
         
 
-    '''def __init__(self,listing_of_all_vendors):
-        self.listing_of_all_vendors=listing_of_all_vendors
-        self.final_prices=self.calculate_final_price'''
+    #def __init__(self,listing_of_all_vendors):
+        #self.listing_of_all_vendors=listing_of_all_vendors
+        #self.final_prices=self.calculate_final_price
 
         
     def seperate_vendor(self,vendor_name):
@@ -181,11 +171,6 @@ class Vendor:
             self.vendorCustoms = vendorData["vendorCustoms"]
             self.vendorCurrency = vendorData["vendorCurrency"]
             self.vendorLeadTime = vendorData["vendorLeadTime"]
->>>>>>> Stashed changes
 
-
-app = QtWidgets.QApplication(sys.argv)
-
-window = MainWindow()
-window.show()
-app.exec()
+        
+'''
