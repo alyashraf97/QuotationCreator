@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1266</width>
-    <height>739</height>
+    <width>1333</width>
+    <height>741</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -188,6 +188,36 @@
           <string/>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="1">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::MinimumExpanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="edit_selected_vendor_button">
+            <property name="text">
+             <string>edit</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QToolButton" name="remove_selected_vendor_button">
+            <property name="text">
+             <string>remove</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
            <widget class="QLabel" name="vendors_label">
             <property name="text">
@@ -195,21 +225,7 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>Add Item</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="edit_selected_vendor_button">
-            <property name="text">
-             <string>edit</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="5">
+          <item row="1" column="0" colspan="4">
            <widget class="QListWidget" name="vendor_list">
             <item>
              <property name="text">
@@ -217,26 +233,6 @@
              </property>
             </item>
            </widget>
-          </item>
-          <item row="0" column="4">
-           <widget class="QToolButton" name="remove_selected_vendor_button">
-            <property name="text">
-             <string>remove</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </widget>
@@ -287,11 +283,6 @@
          <column>
           <property name="text">
            <string>Unit Price</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Total Price</string>
           </property>
          </column>
         </widget>
@@ -595,7 +586,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1266</width>
+     <width>1333</width>
      <height>24</height>
     </rect>
    </property>

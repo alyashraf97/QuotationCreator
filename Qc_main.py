@@ -2,7 +2,8 @@ from email.quoprimime import quote
 import typing
 import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip, Qc_gui
 import sys
-from PyQt6 import QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets
 from QuoteCreatorQT.Ui_main_window import Ui_MainWindow
 
 
