@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>781</width>
+    <height>191</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="currencyLabel">
+        <property name="text">
+         <string>USD to EGP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="currencyLabel_10">
+        <property name="text">
+         <string>EGP to USD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLineEdit" name="lineEdit_9"/>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="currencyLabel_15">
+        <property name="text">
+         <string>EGP to EUR</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLineEdit" name="lineEdit_14"/>
+      </item>
+      <item row="0" column="6">
+       <widget class="QLabel" name="currencyLabel_16">
+        <property name="text">
+         <string>EGP to GBP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QLineEdit" name="lineEdit_18"/>
+      </item>
+      <item row="0" column="8">
+       <widget class="QLabel" name="currencyLabel_21">
+        <property name="text">
+         <string>EGP to AED</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="9">
+       <widget class="QLineEdit" name="lineEdit_23"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="currencyLabel_2">
+        <property name="text">
+         <string>EUR to EGP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_2"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="currencyLabel_8">
+        <property name="text">
+         <string>EUR to USD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QLineEdit" name="lineEdit_7"/>
+      </item>
+      <item row="1" column="4">
+       <widget class="QLabel" name="currencyLabel_13">
+        <property name="text">
+         <string>USD to EUR</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QLineEdit" name="lineEdit_12"/>
+      </item>
+      <item row="1" column="6">
+       <widget class="QLabel" name="currencyLabel_20">
+        <property name="text">
+         <string>USD to GBP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="7">
+       <widget class="QLineEdit" name="lineEdit_16"/>
+      </item>
+      <item row="1" column="8">
+       <widget class="QLabel" name="currencyLabel_25">
+        <property name="text">
+         <string>USD to AED</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="9">
+       <widget class="QLineEdit" name="lineEdit_21"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="currencyLabel_3">
+        <property name="text">
+         <string>GBP to EGP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_3"/>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="currencyLabel_7">
+        <property name="text">
+         <string>GBP to USD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QLineEdit" name="lineEdit_10"/>
+      </item>
+      <item row="2" column="4">
+       <widget class="QLabel" name="currencyLabel_12">
+        <property name="text">
+         <string>GBP to EUR</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="5">
+       <widget class="QLineEdit" name="lineEdit_15"/>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="currencyLabel_19">
+        <property name="text">
+         <string>EUR to GBP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="7">
+       <widget class="QLineEdit" name="lineEdit_17"/>
+      </item>
+      <item row="2" column="8">
+       <widget class="QLabel" name="currencyLabel_24">
+        <property name="text">
+         <string>EUR to AED</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="9">
+       <widget class="QLineEdit" name="lineEdit_22"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="currencyLabel_4">
+        <property name="text">
+         <string>CHF to EGP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_4"/>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="currencyLabel_6">
+        <property name="text">
+         <string>CHF to USD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3">
+       <widget class="QLineEdit" name="lineEdit_8"/>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLabel" name="currencyLabel_11">
+        <property name="text">
+         <string>CHF to EUR</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="5">
+       <widget class="QLineEdit" name="lineEdit_13"/>
+      </item>
+      <item row="3" column="6">
+       <widget class="QLabel" name="currencyLabel_17">
+        <property name="text">
+         <string>CHF to GBP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="7">
+       <widget class="QLineEdit" name="lineEdit_20"/>
+      </item>
+      <item row="3" column="8">
+       <widget class="QLabel" name="currencyLabel_22">
+        <property name="text">
+         <string>GBP to AED</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="9">
+       <widget class="QLineEdit" name="lineEdit_25"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="currencyLabel_5">
+        <property name="text">
+         <string>AED to EGP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEdit_5"/>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="currencyLabel_9">
+        <property name="text">
+         <string>AED to USD</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLineEdit" name="lineEdit_6"/>
+      </item>
+      <item row="4" column="4">
+       <widget class="QLabel" name="currencyLabel_14">
+        <property name="text">
+         <string>AED to EUR</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="5">
+       <widget class="QLineEdit" name="lineEdit_11"/>
+      </item>
+      <item row="4" column="6">
+       <widget class="QLabel" name="currencyLabel_18">
+        <property name="text">
+         <string>AED to GBP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="7">
+       <widget class="QLineEdit" name="lineEdit_19"/>
+      </item>
+      <item row="4" column="8">
+       <widget class="QLabel" name="currencyLabel_23">
+        <property name="text">
+         <string>CHF to AED</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="9">
+       <widget class="QLineEdit" name="lineEdit_24"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
