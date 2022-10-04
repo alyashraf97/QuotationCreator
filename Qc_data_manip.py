@@ -41,15 +41,7 @@ class Item():
             self.vendorCurrency = itemInfo["vendorCurrency"]
             self.vendorLeadTime = itemInfo["vendorLeadTime"]
 
-class Quote():
-    def __init__(self,allQuoteInformation):
-        if(allQuoteInformation != None):
-            self.quoteInformation = allQuoteInformation["quoteInformation"]
-            self.allVendorData = allQuoteInformation["allVendorData"]
-            #self.allItemData = [allQuoteInformation["allVendorData"]["key"] for key in dict.fromkeys(allQuoteInformation["allVendorData"])]
 
-            for i in range(len(allQuoteInformation['allVendorData'])):
-                print(1)
 
                 
 

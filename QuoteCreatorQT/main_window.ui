@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1171</width>
+    <width>1142</width>
     <height>631</height>
    </rect>
   </property>
@@ -27,12 +27,114 @@
        <string>Quotation Details</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="3" column="14">
-        <widget class="QPushButton" name="export_to_pdf_button">
+       <item row="4" column="9" rowspan="3" colspan="6">
+        <widget class="QFrame" name="current_totals_frame">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="1" column="0">
+           <widget class="QLabel" name="total_markup_label">
+            <property name="text">
+             <string>Total Markup</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="current_quote_total_number_label">
+            <property name="text">
+             <string>Total</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="current_quote_total_label">
+            <property name="text">
+             <string>Current Quote Total</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit_5">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="lineEdit_3">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="current_quote_total_currency_label">
+            <property name="text">
+             <string>Currency</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="total_markup_percent_label">
+            <property name="text">
+             <string>%</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="3" column="12">
+        <widget class="QComboBox" name="vat_state_combo">
+         <item>
+          <property name="text">
+           <string>Included</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Not Included</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="11">
+        <widget class="QLabel" name="vat_label">
          <property name="text">
-          <string>Export to PDF</string>
+          <string>VAT</string>
          </property>
         </widget>
+       </item>
+       <item row="3" column="9">
+        <widget class="QLabel" name="delivery_type_label">
+         <property name="text">
+          <string>Delivery Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="10">
+        <widget class="QLineEdit" name="delivery_type_field"/>
        </item>
        <item row="2" column="1">
         <widget class="QLabel" name="manufacturer_label">
@@ -48,8 +150,12 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="12">
-        <widget class="QLineEdit" name="offer_validity_field"/>
+       <item row="3" column="14">
+        <widget class="QPushButton" name="export_to_pdf_button">
+         <property name="text">
+          <string>Export to PDF</string>
+         </property>
+        </widget>
        </item>
        <item row="3" column="1">
         <widget class="QLabel" name="request_label">
@@ -64,6 +170,9 @@
           <string>Export to Excel</string>
          </property>
         </widget>
+       </item>
+       <item row="2" column="12">
+        <widget class="QLineEdit" name="offer_validity_field"/>
        </item>
        <item row="1" column="1">
         <widget class="QLabel" name="customer_label">
@@ -92,29 +201,6 @@
            <width>400</width>
            <height>0</height>
           </size>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3" colspan="2">
-        <widget class="QLineEdit" name="request_field">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>400</width>
-           <height>0</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="11">
-        <widget class="QLabel" name="target_profit_label">
-         <property name="text">
-          <string>Target PO Profit</string>
          </property>
         </widget>
        </item>
@@ -168,20 +254,26 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="13">
-        <widget class="QLabel" name="target_profit_percent_label">
-         <property name="text">
-          <string>%</string>
+       <item row="3" column="3" colspan="2">
+        <widget class="QLineEdit" name="request_field">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>0</height>
+          </size>
          </property>
         </widget>
        </item>
-       <item row="1" column="12">
-        <widget class="QLineEdit" name="target_profit_field"/>
-       </item>
-       <item row="2" column="9">
-        <widget class="QLabel" name="quote_currency_label">
+       <item row="1" column="11">
+        <widget class="QLabel" name="target_profit_label">
          <property name="text">
-          <string>Quote Currency</string>
+          <string>Target PO Profit</string>
          </property>
         </widget>
        </item>
@@ -195,20 +287,41 @@
        <item row="4" column="3" colspan="2">
         <widget class="QLineEdit" name="quote_ref_field"/>
        </item>
-       <item row="1" column="9">
-        <widget class="QLabel" name="quotation_date_label">
+       <item row="2" column="9">
+        <widget class="QLabel" name="quote_currency_label">
          <property name="text">
-          <string>Date</string>
+          <string>Quote Currency</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="10">
-        <widget class="QDateEdit" name="quotation_date_entry"/>
+       <item row="1" column="12">
+        <widget class="QLineEdit" name="target_profit_field"/>
+       </item>
+       <item row="1" column="13">
+        <widget class="QLabel" name="target_profit_percent_label">
+         <property name="text">
+          <string>%</string>
+         </property>
+        </widget>
        </item>
        <item row="5" column="1">
         <widget class="QLabel" name="quote_ref_label">
          <property name="text">
           <string>Ref. No.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="10">
+        <widget class="QDateEdit" name="quotation_date_entry">
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="9">
+        <widget class="QLabel" name="quotation_date_label">
+         <property name="text">
+          <string>Date</string>
          </property>
         </widget>
        </item>
@@ -221,115 +334,6 @@
        </item>
        <item row="5" column="3">
         <widget class="QLineEdit" name="payment_term_field"/>
-       </item>
-       <item row="4" column="9" rowspan="3" colspan="6">
-        <widget class="QFrame" name="current_totals_frame">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0">
-           <widget class="QLabel" name="current_quote_total_label">
-            <property name="text">
-             <string>Current Quote Total</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="total_markup_label">
-            <property name="text">
-             <string>Total Markup</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QLabel" name="current_quote_total_number_label">
-            <property name="text">
-             <string>Total</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="4">
-           <widget class="QLabel" name="current_quote_total_currency_label">
-            <property name="text">
-             <string>Currency</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QLineEdit" name="lineEdit_2">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="5">
-           <widget class="QLineEdit" name="lineEdit_3">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="lineEdit_5">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QLabel" name="total_markup_percent_label">
-            <property name="text">
-             <string>%</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="3" column="12">
-        <widget class="QComboBox" name="vat_state_combo">
-         <item>
-          <property name="text">
-           <string>Included</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Not Included</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="3" column="11">
-        <widget class="QLabel" name="vat_label">
-         <property name="text">
-          <string>VAT</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="9">
-        <widget class="QLabel" name="delivery_type_label">
-         <property name="text">
-          <string>Delivery Type</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="10">
-        <widget class="QLineEdit" name="delivery_type_field"/>
        </item>
       </layout>
      </widget>
@@ -358,26 +362,7 @@
           <string>Vendors</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="2">
-           <widget class="QPushButton" name="pushButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>+</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="4">
+          <item row="1" column="0" colspan="6">
            <widget class="QListWidget" name="vendor_list">
             <item>
              <property name="text">
@@ -386,8 +371,27 @@
             </item>
            </widget>
           </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="pushButton_4">
+          <item row="0" column="5">
+           <widget class="QPushButton" name="Edit_Vendors_Button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QPushButton" name="Remove_Vendor_Button">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -405,8 +409,33 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="0" colspan="2">
-           <widget class="QComboBox" name="comboBox">
+          <item row="0" column="3">
+           <widget class="QPushButton" name="Add_Vendor_Button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>+</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="3">
+           <widget class="QComboBox" name="Vendor_ComboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="editable">
              <bool>true</bool>
             </property>
@@ -492,19 +521,6 @@
          </item>
         </widget>
        </item>
-       <item row="8" column="1">
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Item From Inventory</string>
-         </property>
-        </widget>
-       </item>
        <item row="8" column="4">
         <widget class="QPushButton" name="pushButton_2">
          <property name="sizePolicy">
@@ -518,7 +534,33 @@
          </property>
         </widget>
        </item>
-       <item row="10" column="1" colspan="4">
+       <item row="8" column="1">
+        <widget class="QLabel" name="label">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Item From Inventory</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="3">
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Add</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1" colspan="3">
         <widget class="QTableWidget" name="items_table">
          <property name="sortingEnabled">
           <bool>false</bool>
@@ -583,11 +625,6 @@
          </row>
          <column>
           <property name="text">
-           <string>ID</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
            <string>Name</string>
           </property>
          </column>
@@ -623,19 +660,6 @@
          </column>
         </widget>
        </item>
-       <item row="8" column="3">
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Add</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -646,7 +670,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1171</width>
+     <width>1142</width>
      <height>21</height>
     </rect>
    </property>

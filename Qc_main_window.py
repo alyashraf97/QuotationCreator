@@ -3,6 +3,7 @@ from email.quoprimime import quote
 import typing
 import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip
 import sys
+import sqlite3
 from PyQt6 import QtWidgets, uic
 from QuoteCreatorQT.Ui_main_window import Ui_MainWindow
 
@@ -10,7 +11,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
         self.allVendorData=[]
         super(MainWindow, self).__init__(*args, **kwargs)
-        self.setupUi(self)    
+        self.con = sqlite3.connect("DB.db")
+        self.vendor_Array = []
+        self.setupUi(self)
+        self.refreshVendorChoices()    
     
     def get_quote_data(self):
         customer=self.customer_field.text()
@@ -40,33 +44,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         }
         return quoteData
     
-    
-    def get_vendor_data(self):
-        vendorName=self.vendor_name_field.text()        
-        vendorComission=float(self.vendorComission_field.text())
-        vendorPackingCost=float(self.packing_cost_field.text())
-        vendorShippingCost=float(self.shipping_cost_field.text())
-        vendorCustoms=float(self.vendorComission_field.text())
-        vendorCurrency=self.vendor_currency_combo.currentText()
-        vendorLeadTime=int(self.vendor_lead_time_field.text())
-        
-        vendorData={
-                "vendorName":vendorName,
-                'vendorComission':vendorComission,
-                'vendorPackingCost':vendorPackingCost,
-                'vendorShippingCost':vendorShippingCost,
-                'vendorCustoms':vendorCustoms,
-                'vendorCurrency':vendorCurrency,
-                'vendorLeadTime':vendorLeadTime,
-                }
-        return vendorData
         
         
-    def refreshVendorlist(self):
-        self.allVendorData.clear()
+    def refreshVendorChoices(self):
+        results = self.con.execute("Select * FROM Vendors")
+        self.Vendor_ComboBox.clear()
 
-        for vendor in self.allVendorData:
-            self.allVendorData.addItem(vendor.vendorName)    
+        for vendor in results:
+            self.Vendor_ComboBox.addItem(vendor[1])    
         
     def addNewVendor(self):
         self.allVendorData.append(Vendor(self.get_vendor_data()))
