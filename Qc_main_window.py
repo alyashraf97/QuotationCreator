@@ -1,3 +1,4 @@
+import this
 import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip
 from email.quoprimime import quote
 import typing
@@ -6,15 +7,22 @@ import sys
 import sqlite3
 from PyQt6 import QtWidgets, uic
 from QuoteCreatorQT.Ui_main_window import Ui_MainWindow
+from QuoteCreatorQT.ui_Vendor import Ui_vendorPopup
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
-        self.allVendorData=[]
         super(MainWindow, self).__init__(*args, **kwargs)
         self.con = sqlite3.connect("DB.db")
-        self.vendor_Array = []
         self.setupUi(self)
-        self.refreshVendorChoices()    
+        self.openWindow = None
+        self.allVendorData=[]
+        self.vendor_Array = []
+
+        #Button Setup
+        self.Add_Vendor_Button.clicked.connect(lambda: self.VendorWindow(self.Vendor_ComboBox.currentIndex()+1))
+
+        self.refreshVendorChoices()
+
     
     def get_quote_data(self):
         customer=self.customer_field.text()
@@ -57,6 +65,27 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.allVendorData.append(Vendor(self.get_vendor_data()))
         #self.vendor_list.addItem("New Vendor")
 
+    def VendorWindow(self,vendorIndex= None):
+        self.openWindow = VendorDialog(self)
+
+        if(vendorIndex == None):
+            self.openWindow.show()
+        else:
+            query = self.con.cursor()
+            query.execute("Select * FROM Vendors WHERE ID={} ;".format(vendorIndex))
+            result = query.fetchone()
+
+            self.openWindow.setWindowTitle("Add Vendor")
+            
+
+            self.openWindow.vendor_name_field.setEnabled(False)
+            self.openWindow.vendor_name_field.setText(result[1])
+
+            self.openWindow.vendor_currency_combo.setEnabled(False)
+            self.openWindow.vendor_currency_combo.setItemText(0,result[2])
+            self.openWindow.show()
+
+        self.openWindow.accepted.connect(lambda: self.addNewVendor())
 
     def add_item(self):
         pass
@@ -100,15 +129,6 @@ class Quote:
 
     def calculate_vendor_price_data(self, vendorEntryData):
         vendorInitialUnitPrices=vendorEntryData["vendorInitialUnitPrices"]
-
-
-    
-    
-    
-    
-    
-    
-    
     
     def get_initial_item_weights(self,vendorUnitPrices1):
         #Returns item weights (vendor by vendor basis)
@@ -163,16 +183,6 @@ class Quote:
         else:
             return ((cumulative_sum/(1-target_profit))*(1+sales_tax))*1.14
 
-class Vendor:
-    def __init__(self,vendorData = None):
-        if(vendorData != None):
-            self.vendorName = vendorData["vendorName"]
-            self.vendorComission = vendorData["vendorComission"]
-            self.vendorPackingCost = vendorData["vendorPackingCost"]
-            self.vendorShippingCost = vendorData["vendorShippingCost"]
-            self.vendorCustoms = vendorData["vendorCustoms"]
-            self.vendorCurrency = vendorData["vendorCurrency"]
-            self.vendorLeadTime = vendorData["vendorLeadTime"]
 
 class QuoteInfo():
     def __init__(self, qouteInfo = None):
@@ -216,6 +226,13 @@ class Item():
             self.itemDescription = itemInfo["itemDescription"]
             self.vendorCurrency = itemInfo["vendorCurrency"]
             self.vendorLeadTime = itemInfo["vendorLeadTime"]
+
+class VendorDialog(QtWidgets.QDialog, Ui_vendorPopup):
+        def __init__(self, parent=None):
+            QtWidgets.QDialog.__init__(self, parent)
+            self.setupUi(self)
+            
+                
 
 '''class Quote():
     def __init__(self,allQuoteInformation):
