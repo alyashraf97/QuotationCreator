@@ -87,8 +87,6 @@ class Ui_vendorPopup(object):
         self.gridLayout.addItem(spacerItem1, 1, 2, 1, 1)
 
         self.retranslateUi(vendorPopup)
-        self.vendorPopupBtnBox.accepted.connect(vendorPopup.accept) # type: ignore
-        self.vendorPopupBtnBox.rejected.connect(vendorPopup.reject) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(vendorPopup)
 
     def retranslateUi(self, vendorPopup):

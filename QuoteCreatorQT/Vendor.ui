@@ -185,38 +185,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>vendorPopupBtnBox</sender>
-   <signal>accepted()</signal>
-   <receiver>vendorPopup</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>334</x>
-     <y>149</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>166</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>vendorPopupBtnBox</sender>
-   <signal>rejected()</signal>
-   <receiver>vendorPopup</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>334</x>
-     <y>155</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>166</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

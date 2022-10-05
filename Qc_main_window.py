@@ -5,7 +5,7 @@ import typing
 import Qc_data_manip, Qc_excel_manip, Qc_pdf_manip
 import sys
 import sqlite3
-from PyQt6 import QtWidgets, uic
+from PyQt6 import QtWidgets, uic,QtGui
 from QuoteCreatorQT.Ui_main_window import Ui_MainWindow
 from QuoteCreatorQT.ui_Vendor import Ui_vendorPopup
 
@@ -15,14 +15,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.con = sqlite3.connect("DB.db")
         self.setupUi(self)
         self.openWindow = None
-        self.allVendorData=[]
         self.vendor_Array = []
 
         #Button Setup
         self.Add_Vendor_Button.clicked.connect(lambda: self.VendorWindow(self.Vendor_ComboBox.currentIndex()+1))
 
         self.refreshVendorChoices()
-
+        self.refreshVendors()
     
     def get_quote_data(self):
         customer=self.customer_field.text()
@@ -60,13 +59,47 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         for vendor in results:
             self.Vendor_ComboBox.addItem(vendor[1])    
+
+    def refreshVendors(self):
+        self.vendor_list.clear()
+
+        for vendor in self.vendor_Array:
+            self.vendor_list.addItem(vendor.vendorName)
+
+    def addNewVendor(self,vendorIndex):
         
-    def addNewVendor(self):
-        self.allVendorData.append(Vendor(self.get_vendor_data()))
-        #self.vendor_list.addItem("New Vendor")
+        tempVendor = {
+            "DBID" : vendorIndex,
+            "Name" : self.openWindow.vendor_name_field.text(),
+            "Comission" : self.openWindow.vendor_comission_field.text(),
+            "Packing Cost" : self.openWindow.packing_cost_field.text(),
+            "Shipping Cost" : self.openWindow.shipping_cost_field.text(),
+            "Customs" : self.openWindow.customs_percent_field.text(),
+            "Currency" : self.openWindow.vendor_currency_combo.currentText(),
+            "Lead Time" : self.openWindow.vendor_lead_time_field.text(),
+        }
+
+        for key in tempVendor:
+            if(tempVendor[key] == ""):
+                print(key + " is Empty")
+                return
+
+        self.vendor_Array.append(Vendor(tempVendor))
+        self.refreshVendors()
+        self.openWindow.hide()
+        
 
     def VendorWindow(self,vendorIndex= None):
         self.openWindow = VendorDialog(self)
+        onlyFloat = QtGui.QDoubleValidator()
+        onlyFloat.setBottom(0)
+        onlyInt = QtGui.QIntValidator()
+        onlyInt.setBottom(0)
+        self.openWindow.packing_cost_field.setValidator(onlyFloat)
+        self.openWindow.shipping_cost_field.setValidator(onlyFloat)
+        self.openWindow.vendor_comission_field.setValidator(onlyFloat)
+        self.openWindow.customs_percent_field.setValidator(onlyFloat)
+        self.openWindow.vendor_lead_time_field.setValidator(onlyInt)
 
         if(vendorIndex == None):
             self.openWindow.show()
@@ -85,7 +118,8 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.openWindow.vendor_currency_combo.setItemText(0,result[2])
             self.openWindow.show()
 
-        self.openWindow.accepted.connect(lambda: self.addNewVendor())
+        self.openWindow.vendorPopupBtnBox.accepted.connect(lambda: self.addNewVendor(vendorIndex))
+        self.openWindow.vendorPopupBtnBox.rejected.connect(lambda: self.openWindow.hide())
 
     def add_item(self):
         pass
@@ -204,13 +238,14 @@ class Vendor():
     def __init__(self,vendorData = None):
         self.vendorItems=[]
         if(vendorData != None):
-            self.vendorName = vendorData["vendorName"]
-            self.vendorComission = float(vendorData["vendorComission"])
-            self.vendorPackingCost = float(vendorData["vendorPackingCost"])
-            self.vendorShippingCost = float(vendorData["vendorShippingCost"])
-            self.vendorCustoms = float(vendorData["vendorCustoms"])
-            self.vendorCurrency = vendorData["vendorCurrency"]
-            self.vendorLeadTime = int(vendorData["vendorLeadTime"])
+            self.vendorDBID = vendorData["DBID"]
+            self.vendorName = vendorData["Name"]
+            self.vendorComission = float(vendorData["Comission"])
+            self.vendorPackingCost = float(vendorData["Packing Cost"])
+            self.vendorShippingCost = float(vendorData["Shipping Cost"])
+            self.vendorCustoms = float(vendorData["Customs"])
+            self.vendorCurrency = vendorData["Currency"]
+            self.vendorLeadTime = int(vendorData["Lead Time"])
     
     #def vendor_add_item(self,itemIndex):
     #    self.vendorItems.append(Item(itemInfo=get_item_info(itemIndex)))
