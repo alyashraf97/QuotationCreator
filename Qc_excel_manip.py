@@ -1,6 +1,6 @@
 import openpyxl as xl
-import openpyxl_templates
-import Qc_data_manip
+#import openpyxl_templates
+#import Qc_data_manip
 
 #_______________________________________________________________________________
 #----------------Main Class for the Base Excel Sheet Design---------------------

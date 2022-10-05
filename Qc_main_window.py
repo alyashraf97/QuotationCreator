@@ -81,7 +81,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         for key in tempVendor:
             if(tempVendor[key] == ""):
-                print(key + " is Empty")
+                errMsg=QtWidgets.QMessageBox()
+                errMsg.setText(f"{key} is Empty")
+                errMsg.setWindowTitle("Error")
+                errMsg.exec()
                 return
 
         self.vendor_Array.append(Vendor(tempVendor))
