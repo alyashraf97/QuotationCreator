@@ -15,16 +15,11 @@ def vendorWindow(vendor = None):
         window = Dialog()
         window.show()
 
-#vendorWindow()
-
-
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    x = Dialog()
-    x.show()
     app.exec()
 
 main()

@@ -81,17 +81,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         for key in tempVendor:
             if(tempVendor[key] == ""):
-                errMsg=QtWidgets.QMessageBox()
-                errMsg.setText(f"{key} is Empty")
-                errMsg.setWindowTitle("Error")
-                errMsg.exec()
+                self.errorMessage(key + " is empty.")
                 return
 
         self.vendor_Array.append(Vendor(tempVendor))
         self.refreshVendors()
         self.openWindow.hide()
         
-
     def VendorWindow(self,vendorIndex= None):
         self.openWindow = VendorDialog(self)
         onlyFloat = QtGui.QDoubleValidator()
@@ -123,6 +119,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.openWindow.vendorPopupBtnBox.accepted.connect(lambda: self.addNewVendor(vendorIndex))
         self.openWindow.vendorPopupBtnBox.rejected.connect(lambda: self.openWindow.hide())
+
+
+    def errorMessage(self,string):
+        errMsg=QtWidgets.QMessageBox()
+        errMsg.setText(string)
+        errMsg.setWindowTitle("Error")
+        errMsg.exec()
 
     def add_item(self):
         pass
