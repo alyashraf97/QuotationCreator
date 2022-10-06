@@ -18,9 +18,9 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.vendor_Array = []
 
         #Button Setup
-        self.Add_Vendor_Button.clicked.connect(lambda: self.VendorWindow(self.Vendor_ComboBox.currentIndex()+1))
+        #self.Add_Vendor_Button.clicked.connect(lambda: self.VendorWindow(self.Vendor_ComboBox.currentIndex()+1))
 
-        self.refreshVendorChoices()
+        #self.refreshVendorChoices()
         self.refreshVendors()
     
     def get_quote_data(self):
