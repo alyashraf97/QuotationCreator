@@ -13,13 +13,13 @@ import Qc_DataClasses
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, *args, obj=None, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
-        self.con = sqlite3.connect("DB.db")
         self.setupUi(self)
         self.openWindow = None
         self.vendor_Array = []
 
         #Button Setup
         self.vendor_add_window_button.clicked.connect(lambda: self.showVendorMenu())
+        self.vendor_remove_button.clicked.connect(lambda: self.removeVendor(self.vendor_list.currentRow()))
         self.refreshVendors()
     
     def get_quote_data(self):
@@ -51,9 +51,14 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         return quoteData
     
         
-    
+    def closeOpenWindow(self):
+        self.openWindow.close()
+        self.openWindow = None
 
     def showVendorMenu(self):
+        if(self.openWindow != None):
+            return
+
         self.openWindow = vendor_window(self)
         self.openWindow.show()
 
@@ -63,6 +68,12 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         for vendor in self.vendor_Array:
             self.vendor_list.addItem(vendor.vendorName)
 
+    def removeVendor(self,vendorIndex):
+        if(vendorIndex == -1):
+            return
+        
+        self.vendor_Array.pop(vendorIndex)
+        self.refreshVendors()
 
     def errorMessage(self,string):
         errMsg=QtWidgets.QMessageBox()
